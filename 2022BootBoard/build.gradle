@@ -19,12 +19,27 @@ repositories {
 }
 
 dependencies {
+	// JPA사용을 위해 의존성 추가
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	
+	// Thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	
+	// Web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	// MariaDB
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	//compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.6.2'
+	
+	
+	
+	
 }
 
 tasks.named('test') {
