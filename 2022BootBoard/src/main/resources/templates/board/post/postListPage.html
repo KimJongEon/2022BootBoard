@@ -7,9 +7,22 @@
 <body>
 	<!-- HEADER -->
     <div th:insert="common/header.html" id="header"></div>
-	글 목록 페이지
-	postList
+		<h1>글 목록 페이지 postListPage</h1>
 
+
+	
+	<br/><br/><br/><br/>
+	로그인 하면 아래 페이지 확인 가능
+	<br/>
+	<a href="/postWritePage" class="">글 쓰기</a>
+	<br/>
+	<a href="/postEditPage" class="">글 수정</a>
+	<br/>
+	<!-- 프로젝트 첫 화면 -->
+	<a href="/" class="">글 목록</a>
+	<br/>
+	<a href="/postDetailPage" class="">글 상세페이지</a>
+	<br/>
 
 	<!-- FOOTER -->
     <div th:insert="common/footer.html" id="footer"></div>

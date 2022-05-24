@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PostController {
-	//글 목록 페이지로 이동
-	@GetMapping("/postListPage")
+	
+	//글 목록 페이지로 이동, postListPage가 첫 화면
+	@GetMapping("/")
 	public String postListPage() {
 		return "board/post/postListPage.html";
 	}
