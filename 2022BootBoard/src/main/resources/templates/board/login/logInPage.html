@@ -5,7 +5,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- HEADER -->
+    <div th:insert="common/header.html" id="header"></div>
+
+
+
 	로그인 페이지 입니다
+	<br/>
+	ID : <input type="text">
+	<br/>
+	PASSWORD : <input type="password">
 	<br/><br/><br/><br/>
 	로그인 하면 아래 페이지 확인 가능
 	<br/>
@@ -17,5 +26,9 @@
 	<br/>
 	<a href="/postDetailPage" class="">글 상세페이지</a>
 	<br/>
+	
+	
+	<!-- FOOTER -->
+    <div th:insert="common/footer.html" id="footer"></div>
 </body>
 </html>
