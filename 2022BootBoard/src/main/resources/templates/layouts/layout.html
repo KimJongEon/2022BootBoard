@@ -7,11 +7,17 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
+	<!--  페이지별 공통 header -->
+	<th:block th:replace="/fragments/header :: header"/><!-- 
+	<th:block th:insert="/fragments/header"/> -->
 	
 	<!-- 페이지 별 내용 들어갈 부분 -->
 	<th:block layout:fragment="content"></th:block>
 	
+	<!-- 페이지 별 공통 footer -->
+	<th:block th:replace="/fragments/footer"/>
 </body>
 </html>

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html >
+<html
+lang="ko"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layouts/layout}">
+<!-- IDE에서 thymeleaf 문법에 오류표시 안하도록 설정 -->
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Insert title here</title><!-- 
+<link th:href="@{/css/post/postListPage.css}" rel="stylesheet"> -->
 </head>
 <body>
-	<!-- HEADER -->
-    <div th:insert="fragments/header.html" id="header"></div>
-    
-    
-    
+<th:block layout:fragment="content">
+	<div>
 	<h1>글 목록 페이지 postListPage</h1>
-
-
 	
 	<br/><br/><br/><br/>
 	로그인 하면 아래 페이지 확인 가능
@@ -26,6 +27,10 @@
 	<br/>
 	<a href="/postDetailPage" class="">글 상세페이지</a>
 	<br/>
+	</div>
+</th:block> <!-- thymeleaf block  -->
+
+
 
 	<!-- FOOTER -->
     <div th:insert="fragments/footer.html" id="footer"></div>

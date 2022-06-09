@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html
+lang="ko"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layouts/layout}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- HEADER -->
-    <div th:insert="fragments/header.html" id="header"></div>
 
+<th:block layout:fragment="content">
 	로그인 페이지 입니다
 	<br/>
 	ID : <input type="text"> @ <input type ="text">
 	<br/>
 	PASSWORD : <input type="password">
-	
-	<!-- FOOTER -->
-    <div th:insert="fragments/footer.html" id="footer"></div>
+</th:block>	
 </body>
 </html>
