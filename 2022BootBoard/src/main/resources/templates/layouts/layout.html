@@ -4,15 +4,16 @@ lang="ko"
 xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <!-- IDE에서 thymeleaf 문법에 오류표시 안하도록 설정 -->
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 
+<!-- [head] 영역 시작 -->
+<head th:replace="fragments/head :: headFragment">
+		<meta charset="UTF-8">
+		<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">default</title>
 </head>
+	<!-- [head] 영역 끝 -->
 <body>
 	<!--  페이지별 공통 header -->
-	<th:block th:replace="/fragments/header :: header"/><!-- 
-	<th:block th:insert="/fragments/header"/> -->
+	<th:block th:replace="/fragments/header :: header"/>
 	
 	<!-- 페이지 별 내용 들어갈 부분 -->
 	<th:block layout:fragment="content"></th:block>
