@@ -1,5 +1,5 @@
 package com.board.service;
 
-public class BoardService {
+public class PostService {
 
 }

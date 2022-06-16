@@ -5,12 +5,10 @@ xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorate="~{layouts/layout}">
 <!-- IDE에서 thymeleaf 문법에 오류표시 안하도록 설정 -->
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
- <!-- <th:block layout:fragment="css">
-<link th:href="@{/css/post/postListPage.css}" rel="stylesheet">
-</th:block> -->
+	<title>글 목록</title>
+	<link th:href="@{/css/post/postListPage.css}" rel="stylesheet">
 </head>
 <body>
 <th:block layout:fragment="content">
@@ -32,9 +30,9 @@ layout:decorate="~{layouts/layout}">
 	</div>
 </th:block> <!-- thymeleaf block  -->
 
-
-
-	<!-- FOOTER -->
-    <div th:insert="fragments/footer.html" id="footer"></div>
+<!--  개별 JS 넣는 곳 -->
+<th:block layout:fragment="js">
+	<script src="js/postListPage.js"></script>
+</th:block>
 </body>
 </html>

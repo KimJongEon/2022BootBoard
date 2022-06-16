@@ -1,5 +1,5 @@
 package com.board.dto;
 
-public class BoardDTO {
+public class PostDTO {
 
 }
