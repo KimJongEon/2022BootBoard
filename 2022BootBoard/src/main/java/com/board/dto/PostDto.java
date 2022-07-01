@@ -22,6 +22,18 @@ public class PostDto {
 		private int p_read_cnt; // 조회수
 	} // PostListDto End
 	
+	@Getter
+	@Builder
+	public static class PostDetailDto{ // 게시글 상세 페이지 Dto
+		private int p_no; //PK
+		private String mbr_id; // 아이디
+		private String p_title; // 제목
+		private String p_content; //내용
+		private Timestamp p_dt; // 작성 시간
+		private int p_read_cnt; // 조회
+	} // PostDetailDto End
+	
+	
 //	@Getter
 //	@Builder
 //	public static class PostSaveDto{ // 게시글 저장 Dto
