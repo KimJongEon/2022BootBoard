@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.board.dto.PostDto;
 import com.board.dto.PostDto.PostListDto;
@@ -42,8 +45,15 @@ public class PostController {
 	}
 
 	//글 상세 페이지 이동
-	@GetMapping("/postDetailPage")
-	public String postDetailPage() {
+	@RequestMapping(value = "postDetailPage/{p_no}" , method = RequestMethod.GET )
+	public String postDetailPage(
+			//PathVariable annotation
+			//tr 클릭 시 해당 p_no값을 받아 오기 위한 annotation
+			@PathVariable("p_no") int p_no
+			
+			) { 
+		
+		System.out.println("p_no값 넘어 오는지 컨트롤러 테스트 : "+p_no);
 		return "board/post/postDetailPage.html";
 	}	
 	

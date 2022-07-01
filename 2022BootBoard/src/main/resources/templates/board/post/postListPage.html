@@ -28,7 +28,7 @@ layout:decorate="~{layouts/layout}">
 				</thead>
 
 				<tbody>
-					<tr th:each="postList : ${postList}" style="cursor: pointer;">
+					<tr th:onClick="| location.href='/postDetailPage/' + ${postList.p_no} | "  th:each="postList : ${postList}" style="cursor: pointer;">
 						<td th:text="${postList.p_no}"></td>
 						<td th:text="${postList.p_title}"></td>
 						<td th:text="${postList.mbr_id}"></td>
@@ -56,7 +56,7 @@ layout:decorate="~{layouts/layout}">
 
 <!--  개별 JS 넣는 곳 -->
 <th:block layout:fragment="js">
-	<script src="js/postListPage.js"></script>
+	<script src="/js/post/postListPage.js"></script>
 </th:block>
 </body>
 </html>

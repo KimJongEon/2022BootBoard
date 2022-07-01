@@ -20,7 +20,8 @@ public class PostService {
 	private PostRepository postRepository;
 	
 	//PostDto inner class 적용
-	@Transactional
+//	@Transactional
+//	@Transactional(rollbackFor = Exception.class) 
 	public List<PostListDto> getPostList(){
 		
 		//postEntities에 findall 메소드를 사용하여 PostEntity 의 데이터 전부를 가져온다
@@ -42,5 +43,5 @@ public class PostService {
         }
 		
 		return postList;
-	} //getPostList 끝
+	} //getPostList End
 }
