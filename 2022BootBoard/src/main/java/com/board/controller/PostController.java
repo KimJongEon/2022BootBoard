@@ -6,11 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.board.dto.PostDto.PostDetailDto;
 import com.board.dto.PostDto.PostListDto;
+import com.board.dto.PostDto.PostRegisterDto;
 import com.board.service.PostService;
 
 import lombok.AllArgsConstructor;
@@ -20,6 +22,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @Controller
 public class PostController {
+	//PostService 이용을 위해 선언
 	private PostService postService;
 	
 	// ########## 글 목록 페이지로 이동, postListPage가 첫 화면 ##########
@@ -37,9 +40,9 @@ public class PostController {
 	}
 	
 	// ########## 글 작성 페이지로 이동 ########## 
-	@GetMapping("/postWritePage")
+	@GetMapping("/postRegisterPage")
 	public String postWritePage() {
-		return "board/post/postWritePage.html";
+		return "board/post/postRegisterPage.html";
 	}
 
 	// ########## 글 상세 페이지 이동 ########## 
@@ -64,6 +67,18 @@ public class PostController {
 	public String postEditPage() {
 		return "board/post/postEditPage.html";
 	}
-
+	
+	//RequestMapping method post -> PostMapping annotation으로 해결
+	@PostMapping("/postRegister")
+	public String postRegister (PostRegisterDto postRegisterDto) { // 게시글 등록 dto 선언
+		// 값들고오는지 확인
+		System.out.println(postRegisterDto.getP_title());
+		System.out.println(postRegisterDto.getP_content());
+		System.out.println("글 등록 확인@@@@@@@@@@@@@@@@@@@");
+		//		postService.postRegister
+		
+		return "redirect:/";
+		
+	}
 	
 }

@@ -33,6 +33,13 @@ public class PostDto {
 		private int p_read_cnt; // 조회
 	} // PostDetailDto End
 	
+	@Getter
+	@Builder
+	public static class PostRegisterDto{ // 게시글 등록 Dto
+		private String mbr_id;
+		private String p_title;
+		private String p_content;
+	}
 	
 //	@Getter
 //	@Builder
