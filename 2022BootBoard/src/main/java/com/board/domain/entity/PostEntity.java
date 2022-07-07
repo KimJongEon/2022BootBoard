@@ -1,7 +1,5 @@
 package com.board.domain.entity;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor( access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "POST_TB")
-public class PostEntity {
+public class PostEntity extends PostTimeEntity {
 	
 	@Id // PK 지정 Annotation
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // PK 자동 증가(auto increment) 지원 Annotation -> auto_increment 사용을 위해 선언필요
@@ -28,16 +26,14 @@ public class PostEntity {
 	private String mbr_id; // 아이디
 	private String p_title; // 제목
 	private String p_content; // 내용
-	private Timestamp p_dt; // 작성 시간
 	private int p_read_cnt; // 조회수
 	
 	@Builder
-	public PostEntity(int p_no, String mbr_id, String p_title, String p_content, Timestamp p_dt, int p_read_cnt) {
+	public PostEntity(int p_no, String mbr_id, String p_title, String p_content, int p_read_cnt) {
 		this.p_no = p_no;
 		this.mbr_id = mbr_id;
 		this.p_title = p_title;
 		this.p_content = p_content;
-		this.p_dt = p_dt;
 		this.p_read_cnt = p_read_cnt;
 	}
 }

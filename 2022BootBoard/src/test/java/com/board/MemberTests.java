@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.board.domain.entity.Member;
+import com.board.domain.entity.MemberEntity;
 import com.board.domain.entity.MemberRepository;
 
 @SpringBootTest
@@ -14,7 +14,7 @@ public class MemberTests {
 	
 	@Test
 	void saveID() {
-		Member params = Member.builder()
+		MemberEntity params = MemberEntity.builder()
 				.mbr_id("JongEonTest")
 				.build();
 		

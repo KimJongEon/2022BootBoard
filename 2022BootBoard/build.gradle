@@ -19,24 +19,29 @@ repositories {
 }
 
 dependencies {
-	// JPA사용을 위해 의존성 추가
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	
-	// Thymeleaf
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	
-	
+	// ########## Thymeleaf
 	// Thymeleaf layout 의존성 추가
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0'
 	
+	// ########## Spring Security 사용을 위한 의존성 추가 (starter-security)
+	//스프링 시큐리티 인증을 받은 로그인 한 사용자의 정보를 타임리프에서 사용하고 싶을 때 사용
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	
-	// Web
+	// Spring 프로젝트에 필요한 대부분의 라이브러리가 추가 됨 (Starter-web)
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
-	// Lombok
+	// Test 환경 구성을 위한 의존성 주입
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// ########## Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	
+	// JPA사용을 위해 의존성 추가
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	
 	// MariaDB
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'

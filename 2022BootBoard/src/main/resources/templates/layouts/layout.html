@@ -12,7 +12,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- 부트스트랩 사용을 위한 공통 CSS -->
-<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="/css/common/bootstrap/bootstrap.min.css" rel="stylesheet">
 
 <!-- 공통적인 css -->
 <link rel="stylesheet" href="/css/fragments/header.css" />
@@ -27,10 +27,19 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<!-- 페이지 별 내용 들어갈 부분 -->
 	<th:block layout:fragment="content"></th:block>
 	
+	
+	<!-- 	Juqery js -->
+	<script src="/js/common/jquery-3.6.0.min.js"></script>
+	
+	<!-- 	BootStrap js -->
+	<script src="/js/common/bootstrap/bootstrap.min.js"></script>
+	
 	<!-- 개별적인 js -->
 	<th:block layout:fragment="js"></th:block>
 
 	<!-- 페이지 별 공통 footer -->
 	<th:block th:replace="fragments/footer.html :: footer"/>
+	
+	
 </body>
 </html>

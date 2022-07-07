@@ -68,6 +68,7 @@ public class PostController {
 		return "board/post/postEditPage.html";
 	}
 	
+	// ########## 글 등록 ##########  
 	//RequestMapping method post -> PostMapping annotation으로 해결
 	@PostMapping("/postRegister")
 	public String postRegister (PostRegisterDto postRegisterDto) { // 게시글 등록 dto 선언
@@ -75,7 +76,6 @@ public class PostController {
 		System.out.println(postRegisterDto.getP_title());
 		System.out.println(postRegisterDto.getP_content());
 		System.out.println("글 등록 확인@@@@@@@@@@@@@@@@@@@");
-		//		postService.postRegister
 		
 		return "redirect:/";
 		

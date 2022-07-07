@@ -1,49 +1,47 @@
 package com.board.dto;
 
-import java.sql.Timestamp;
-
-
-import com.board.domain.entity.PostEntity;
+import java.time.LocalDateTime;
 
 import lombok.Builder;
 import lombok.Getter;
 
-//@Getter
+
 public class PostDto {
 	// inner class 적용
 	
 	@Getter
 	@Builder
-	public static class PostListDto{  //게시글 조회 Dto
+	public static class PostListDto{  // ########## 게시글 조회 Dto ########## 
 		private int p_no; // PK
 		private String mbr_id; // 아이디
 		private String p_title; // 제목
-		private Timestamp p_dt; // 작성 시간
+		private LocalDateTime p_dt; // 작성 시간
 		private int p_read_cnt; // 조회수
 	} // PostListDto End
 	
 	@Getter
 	@Builder
-	public static class PostDetailDto{ // 게시글 상세 페이지 Dto
+	public static class PostDetailDto{ // ########## 게시글 상세 페이지 Dto ########## 
 		private int p_no; //PK
 		private String mbr_id; // 아이디
 		private String p_title; // 제목
 		private String p_content; //내용
-		private Timestamp p_dt; // 작성 시간
+		private LocalDateTime p_dt; // 작성 시간
 		private int p_read_cnt; // 조회
 	} // PostDetailDto End
 	
 	@Getter
 	@Builder
-	public static class PostRegisterDto{ // 게시글 등록 Dto
+	public static class PostRegisterDto{ // ########## 게시글 등록 Dto ########## 
 		private String mbr_id;
 		private String p_title;
 		private String p_content;
+		private LocalDateTime p_dt;
 	}
 	
 //	@Getter
 //	@Builder
-//	public static class PostSaveDto{ // 게시글 저장 Dto
+//	public static class PostSaveDto{ // ########## 게시글 저장 Dto ########## 
 //		private int p_no; // PK
 //		private String mbr_id; // 아이디
 //		private String p_title; // 제목
