@@ -19,7 +19,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @Service
 public class PostService {
-	private PostRepository postRepository;
+	private final PostRepository postRepository;
 	
 	// ########## 글목록 service ########## 
 //	@Transactional

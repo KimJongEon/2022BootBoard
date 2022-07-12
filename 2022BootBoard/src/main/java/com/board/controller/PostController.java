@@ -28,7 +28,7 @@ public class PostController {
 	// ########## 글 목록 페이지로 이동, postListPage가 첫 화면 ##########
 	@GetMapping("/")
 	public String postListPage(Model model) { //Model 사용을 위해 선언
-		
+		System.out.println("여기오");
 		// service 에서 생성한 객체 리스트 postList를 postList에 담는다
 		List<PostListDto> postList = postService.getPostList();
 		

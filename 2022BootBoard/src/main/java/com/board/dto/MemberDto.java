@@ -15,7 +15,7 @@ public class MemberDto {
 	@Setter
 	@Builder
 	public static class SignUpDto{ // 회원가입 Dto
-		private String mbr_id; // pk
+		private String mbrId; // pk
 		private String mbr_pwd; // 비밀번호
 		private String mbr_nm; // 이름
 		private String tel_no; // 전화번호 (휴대폰번호)
@@ -28,7 +28,7 @@ public class MemberDto {
 		public MemberEntity toEntity(){
 			MemberEntity memberEntity = MemberEntity.builder()
 //			return MemberEntity.builder()
-				.mbr_id(mbr_id)
+				.mbrId(mbrId)
 				.mbr_pwd(mbr_pwd)
 				.mbr_nm(mbr_nm)
 				.tel_no(tel_no)

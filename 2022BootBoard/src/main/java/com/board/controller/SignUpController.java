@@ -16,7 +16,7 @@ public class SignUpController {
 	private SignUpService signUpService;
 	
 	
-	//글 목록 페이지로 이동, postListPage가 첫 화면
+	// 회원가입 페이지로 이동, postListPage가 첫 화면
 	@GetMapping("/signUpPage")
 	public String signUpPage() {
 		return "board/signup/signUpPage.html";
@@ -28,15 +28,15 @@ public class SignUpController {
 		
 		//######## 테스트 ##########	
 		
-		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); // 비밀번호 암호화
-	    // SignUpDto 에서 get한 mbr_pwd에 암호화된 비밀번호를 set
-	    signUpDto.setMbr_pwd(passwordEncoder.encode(signUpDto.getMbr_pwd()));
+//		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); // 비밀번호 암호화
+//	    // SignUpDto 에서 get한 mbr_pwd에 암호화된 비밀번호를 set
+//	    signUpDto.setMbr_pwd(passwordEncoder.encode(signUpDto.getMbr_pwd()));
 		
 	    //######## 테스트 ##########
 		
 		
 		// 값들고오는지 확인
-		System.out.println(signUpDto.getMbr_id());
+		System.out.println(signUpDto.getMbrId());
 		System.out.println("@########가입 시간 : "+signUpDto.toEntity().getSignup_dt());
 		System.out.println(" ######### 휴대폰 번호 : " + signUpDto.toEntity().getTel_no() );
 		System.out.println(signUpDto.getMbr_pwd());

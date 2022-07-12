@@ -15,7 +15,7 @@ public class MemberTests {
 	@Test
 	void saveID() {
 		MemberEntity params = MemberEntity.builder()
-				.mbr_id("JongEonTest")
+				.mbrId("JongEonTest")
 				.build();
 		
 		memberRepository.save(params);

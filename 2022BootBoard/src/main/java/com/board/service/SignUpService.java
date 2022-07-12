@@ -16,10 +16,8 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Service
-
-//implements UserDetailsService
 public class SignUpService {
-	private MemberRepository memberRepository;
+	private final MemberRepository memberRepository;
 	
 	@Transactional
     public String SignUp (SignUpDto signUpDto) {
@@ -29,16 +27,7 @@ public class SignUpService {
         // SignUpDto 에서 get한 mbr_pwd에 암호화된 비밀번호를 set
         signUpDto.setMbr_pwd(passwordEncoder.encode(signUpDto.getMbr_pwd()));
 
-        return memberRepository.save(signUpDto.toEntity()).getMbr_id();
+        return memberRepository.save(signUpDto.toEntity()).getMbrId();
     } // SignUp End
-
-	
-	// loadUserByUsername : 상세 정보 조회 메소드
-	// 사용자의 계정정보와 권한을 갖는 UserDetails 인터페이스를 반환하여야 함
-//	@Override
-//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException { 
-//		
-//		return null; //UserDetails 인터페이스를 반환
-//	}
 
 } // SignUpService End
