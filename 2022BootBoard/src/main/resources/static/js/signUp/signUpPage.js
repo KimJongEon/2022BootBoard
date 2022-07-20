@@ -1,46 +1,46 @@
 $(function(){
 	// 회원가입시 아이디, 비밀번호, 비밀번호확인, 이름, 휴대폰번호 체크
 	$("#signUpBtn").click(function(){
-		var pwd1=$("#mbr_pwd_01").val();
-        var pwd2=$("#mbr_pwd_02").val();
+		var pwd1=$("#mbrPassword_01").val();
+        var pwd2=$("#mbrPassword_02").val();
         
-		if($("#mbr_id").val().length == 0){
+		if($("#mbrEmail").val().length == 0){
 			alert("아이디를 입력해주세요."); //알림창 띄우기
-			$("#mbr_id").focus(); //제목창으로 포커스
+			$("#mbrEmail").focus(); //제목창으로 포커스
 			return false; //submit을 막기위해 리턴 false 해줌
 		}
 	
         if(pwd1 != "" || pwd2 != ""){
             if(pwd1 != pwd2){
             	alert("비밀번호를 정확히 입력해주세요");
-    			$("#mbr_pwd_01").focus();
+    			$("#mbrPassword_01").focus();
     			return false;
             }
         }
         
-		if($("#mbr_pwd_01").val().length == 0){
+		if($("#mbrPassword_01").val().length == 0){
 			alert("비밀번호를 정확히 입력해주세요");
-			$("#mbr_pwd_01").focus();
+			$("#mbrPassword_01").focus();
 			return false;
 		}
 		
-		if($("#mbr_pwd_02").val().length == 0){
+		if($("#mbrPassword_02").val().length == 0){
 			alert("비밀번호를 정확히 입력해주세요");
-			$("#mbr_pwd_02").focus();
+			$("#mbrPassword_02").focus();
 			return false;
 		}
 
-		if($("#mbr_nm").val().length == 0){
-			alert("이름을 입력해주세요.");
-			$("#mbr_nm").focus();
+		if($("#mbrNickName").val().length == 0){
+			alert("닉네임을 입력해주세요.");
+			$("#mbrNickName").focus();
 			return false;
 		}
 		
-		if($("#tel_no").val().length == 0){
-			alert("휴대폰 번호를 입력해주세요.");
-			$("#tel_no").focus();
-			return false;
-		}
+//		if($("#tel_no").val().length == 0){
+//			alert("휴대폰 번호를 입력해주세요.");
+//			$("#tel_no").focus();
+//			return false;
+//		}
 		
 		
 		
@@ -48,15 +48,15 @@ $(function(){
 	
 	var idCheck = false;
 	var pwCheck = false;
-	$("input[name=mbr_id]").keyup(function(event){ 
-
-		if (!(event.keyCode >=37 && event.keyCode<=40)) {
-			var inputVal = $(this).val();
-
-		    $(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
-		}
-
-	}); // mbr_id keyup END
+//	$("input[name=mbrEmail]").keyup(function(event){ 
+//
+//		if (!(event.keyCode >=37 && event.keyCode<=40)) {
+//			var inputVal = $(this).val();
+//
+//		    $(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+//		}
+//
+//	}); // mbrEmail keyup END
 
 	$("input[name=tel_no]").keyup(function(event){ 
 
@@ -82,8 +82,8 @@ $(function(){
 //	$(function(){
         $("input").blur(function(){
         	
-            var pwd1=$("#mbr_pwd_01").val();
-            var pwd2=$("#mbr_pwd_02").val();
+            var pwd1=$("#mbrPassword_01").val();
+            var pwd2=$("#mbrPassword_02").val();
             
             if(pwd1 != "" || pwd2 != ""){
                 if(pwd1 == pwd2){
@@ -118,18 +118,18 @@ $(function(){
 //    });
 	
 //        //아이디 중복 체크
-//        $("#mbr_id").blur(function(){
-//        	var mbr_id = $('#mbr_id').val();
-//        	console.log(mbr_id);
+//        $("#mbrEmail").blur(function(){
+//        	var mbrEmail = $('#mbrEmail').val();
+//        	console.log(mbrEmail);
 //        	
 //        	$.ajax({
 //        		type : "GET",
-//        		data :{ "mbr_id" : mbr_id},
+//        		data :{ "mbrEmail" : mbrEmail},
 //        		url : "/idCheck",
 //        		success : function(data){
 //        			console.log(data);
 //        			
-//        			if(mbr_id == ""){
+//        			if(mbrEmail == ""){
 //        				$("#id-write").show();
 //        				$("#id-success").hide();
 //        				$("#id-danger").hide();
@@ -171,6 +171,6 @@ $(function(){
 //        			
 //        		}
 //        	}); //ajax END
-//        }); //mbr_id keyup END
+//        }); //mbrEmail keyup END
         
 }); // function() END

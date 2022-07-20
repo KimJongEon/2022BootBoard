@@ -27,12 +27,13 @@ layout:decorate="~{layouts/layout}">
 				</thead>
 
 				<tbody>
-					<tr th:onClick="| location.href='/postDetailPage/' + ${postList.p_no} | "  th:each="postList : ${postList}" style="cursor: pointer;">
-						<td th:text="${postList.p_no}"></td>
-						<td th:text="${postList.p_title}"></td>
-						<td th:text="${postList.mbr_id}"></td>
-						<td th:text="${postList.p_dt}"></td>
-						<td th:Text="${postList.p_read_cnt}"></td>
+					<tr th:onClick="| location.href='/postDetailPage/' + ${postList.postNumber} | "  th:each="postList : ${postList}" style="cursor: pointer;">
+						<td th:text="${postList.postNumber}"></td>
+						<td th:text="${postList.postTitle}"></td>
+						<td th:text="${postList.mbrIdx}"></td>
+<!-- 						<td th:text="${postList.mbrEmail}"></td> -->
+						<td th:text="${postList.postDate}"></td>
+						<td th:Text="${postList.postReadCount}"></td>
 					</tr>
 				</tbody>
 			</table>

@@ -1,9 +1,13 @@
 package com.board.domain.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
@@ -21,19 +25,39 @@ public class PostEntity extends PostTimeEntity {
 	
 	@Id // PK 지정 Annotation
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // PK 자동 증가(auto increment) 지원 Annotation -> auto_increment 사용을 위해 선언필요
-	private int p_no; // PK
+	@Column(name = "postNumber")
+	private Long postNumber; // PK
 	
-	private String mbr_id; // 아이디
-	private String p_title; // 제목
-	private String p_content; // 내용
-	private int p_read_cnt; // 조회수
+	@Column(name = "mbrIdx")
+	private Long mbrIdx; // id ( auto increment)
+	
+	@Column(name = "postTitle")
+	private String postTitle; // 제목
+	
+	@Column(name = "postContent")
+	private String postContent; // 내용
+	
+	@Column(name = "postReadCount")
+	private Long postReadCount; // 조회수
+	
+	
+	@ManyToOne(targetEntity = MemberEntity.class, fetch = FetchType.LAZY)
+	@JoinColumn(name="mbrIdx", referencedColumnName="mbrIdx", insertable=false, updatable=false)
+//	// join시 해당 옵션 선언 하지 않으면 오류 발생 * insertable=false, updatable=false
+//	// name과 referencedColumnName이 같으면 referencedColumnName 생략가능
+	private  MemberEntity memberEntity;
+	
+	@Column(name = "mbrNickName")
+	private String mbrNickName; // 닉네임
 	
 	@Builder
-	public PostEntity(int p_no, String mbr_id, String p_title, String p_content, int p_read_cnt) {
-		this.p_no = p_no;
-		this.mbr_id = mbr_id;
-		this.p_title = p_title;
-		this.p_content = p_content;
-		this.p_read_cnt = p_read_cnt;
+	public PostEntity(Long postNumber, Long mbrIdx, String postTitle, String postContent, Long postReadCount, String mbrNickName) {
+		this.postNumber = postNumber;
+		this.mbrIdx = mbrIdx;
+		this.postTitle = postTitle;
+		this.postContent = postContent;
+		this.postReadCount = postReadCount;
+		this.mbrNickName = mbrNickName;
 	}
+	
 }

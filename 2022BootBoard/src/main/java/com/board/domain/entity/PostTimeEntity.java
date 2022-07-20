@@ -18,8 +18,8 @@ import lombok.Getter;
 @EntityListeners(AuditingEntityListener.class) // JPA에게 해당 엔티티(PostTimeEntity) 는 Auditing 기능을 사용 한다는 것을 알리는 어노테이션
 public abstract class PostTimeEntity {
 	
-	@Column(name = "p_dt" , updatable = false)
+	@Column(name = "postDate" , updatable = false)
 	@CreatedDate
-	private LocalDateTime p_dt;
+	private LocalDateTime postDate;
 	
 }

@@ -19,7 +19,7 @@ import lombok.Getter;
 public abstract class MemberTimeEntity {
 	
 	@CreatedDate
-	@Column(name = "signup_dt", updatable = false)
-	private LocalDateTime signup_dt;
+	@Column(name = "signupDate", updatable = false)
+	private LocalDateTime signupDate;
 
 }

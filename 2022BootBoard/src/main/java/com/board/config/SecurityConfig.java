@@ -56,8 +56,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/**").permitAll() // 모든 경로에 대해 권한 없이 접근 가능
 				
 			.and().formLogin() // ########## 로그인 설정 ##########
-				.usernameParameter("mbr_id") // 아이디 파라미터 [기본 값 "username"] -> "mbr_id" 변경
-				.passwordParameter("mbr_pwd") // 비밀번호 파라미터 [기본 값 "password"] -> "mbr_pwd" 변경
+				.usernameParameter("mbrEmail") // 아이디 파라미터 [기본 값 "username"] -> "mbrEmail" 변경
+				.passwordParameter("mbrPassword") // 비밀번호 파라미터 [기본 값 "password"] -> "mbrPassword" 변경
 				.loginPage("/") // 로그인 URL 
 				.loginProcessingUrl("/securityLogIn") //Spring Security 가 해당 주소로 요청오는 로그인을 가로채서 대신 로그인해줌(서비스의 loadUserByUsername로 알아서)
 //				.defaultSuccessUrl("/", true) // 로그인 성공시 이동하게 되는 URL *컨트롤러에 해당 URL 맵핑 되어 있어야함 '/'가 첫 페이지인 postListPage로 맵핑되어있음
@@ -87,6 +87,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		System.out.println("SecurityConfig - AuthenticationManager : 확인 @@@@@");
-        auth.userDetailsService(logInService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(logInService);
+//        auth.userDetailsService(logInService).passwordEncoder(passwordEncoder());
     }
 }

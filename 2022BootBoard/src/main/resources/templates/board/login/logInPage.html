@@ -19,13 +19,13 @@ layout:decorate="~{layouts/layout}">
 				<h5 class="form-signin-heading">로그인 정보를 입력하세요</h5>
 				<br/>
 				
-				<label for="mbr_id" class="sr-only">Your ID</label>
+				<label for="mbr_id" class="sr-only">Email ( id )</label>
 				<!-- Spring Security 사용을 위해 로그인 시 아이디 name 값은 "username" 이어야 한다 -->
-				<input type="text" id="mbr_id" name="mbr_id" class="form-control" placeholder="아이디" required autofocus>
+				<input type="text" id="mbrEmail" name="mbrEmail" class="form-control" placeholder="이메일" required autofocus>
 				<BR>
 				
 				<label for="inputPassword" class="sr-only">Password</label>
-				<input type="password" id="mbr_pwd" name="mbr_pwd" class="form-control" placeholder="비밀번호" required>
+				<input type="password" id="mbrPassword" name="mbrPassword" class="form-control" placeholder="비밀번호" required>
 				<br>
 				
 				<a href="/signUpPage" class="nav-link signUpPage">회원가입</a>
